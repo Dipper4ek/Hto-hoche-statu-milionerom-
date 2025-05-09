@@ -59,10 +59,10 @@ class Game:
     
     def main(self):
         number_player = input("Enter: ")
-        self.choose_number = categories[random.choice(self.subjects)]
-        print(self.choose_number)
+        self.choose_topic = categories[random.choice(self.subjects)]
+        self.choose_question = self.choose_topic[random.randint(0,1)]
+        print(self.choose_question)
         
 p_game = Game()
 while True:
     p_game.main()
-
