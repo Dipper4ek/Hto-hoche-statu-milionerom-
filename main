@@ -56,38 +56,63 @@ categories = {
 class Game:
     def __init__(self):
         self.subjects = ["math", "physics", "geography", "german"]
-        self. = 
         self.tr_fl = None
         self.balance = 0
+        self.leer_list = []
         
     def greetings(self):
-        print("Hello")
-        print("This is GAme Hto hoche")
-        print("You have ", balance, "dollars)
-        print("You can win 1 000 000 dollars")
-        print("i give you 10 questions")
-        print("Want you play?")
-        self.tr_fl = str(input("       (Y/n?)"))
-    def main(self):
-        self.choose_topic = categories[random.choice(self.subjects)][random.randint(0,1)]
+        print("Привіт")
+        print('Це гра "Хто хоче стати мільйонером?"')
+        print("У тебе", self.balance, "доларів")
+        print("Ти можеш виграти 1 000 000 доларів")
+        print("Я дам тобі 10 запитань")
+        print("Хочеш грати?")
+        while True:
+            self.tr_fl = str(input("       (Y/n?)"))
+            if self.tr_fl.lower() == "y":
+                self.tr_fl = True
+                break
+            elif self.tr_fl.lower() == "n":
+                self.tr_fl = False
+                break
+            
         
-        print(self.choose_topic["question"])
-        print(self.choose_topic["answers"])
-        player_antwort = input("Enter: ")
-        if player_antwort == "a":
-            player_antwort = self.choose_topic["answers"][0]
-        elif player_antwort == "b":
-            player_antwort = self.choose_topic["answers"][1]
-        elif player_antwort == "c":
-            player_antwort = self.choose_topic["answers"][2]
-        elif player_antwort == "d":
-            player_antwort = self.choose_topic["answers"][3]
-        if player_antwort == self.choose_topic["correct_answer"]:
-            print("tu dolbazob")
+        
+            
+    def ask_question(self)self.choose_topic = categories[random.choice(self.subjects)][random.randint,)]
+        
+            print(self.choose_topic["question"])
+            print(self.choose_topic["answers"])
+            player_antwort = input("Enter: ")
+            if player_antwort == "a":
+                player_antwort = self.choose_topic["answers"][0]
+            elif player_antwort == "b":
+                player_antwort = self.choose_topic["answers"][1]
+            elif player_antwort == "c":
+                player_antwort = self.choose_topic["answers"][2]
+            elif player_antwort == "d":
+                player_antwort = self.choose_topic["answers"][3]
+            if player_antwort == self.choose_topic["correct_answer"]:
+                return "tu dolbazob"
+        else:
+            print("VSEGO HOROSCHEHO")
+            return
+    
+    def main(self):
+        if self.tr_fl:
+            print("\nРозпочинаємо гру!\n")
+            while categories != self.leer_list:
+                self.ask_question()
+            print(f"\nГра завершена! Ти правильно відповів на {self.question_count} запитань.")
+            print(f"Твій підсумковий рахунок: {self.balance} доларів")
+        else:
+            print("До побачення!")
+            
+            
+
         
         
         
 p_game = Game()
 p_game.greetings()
-while True:
-    p_game.main()
+p_game.main()
