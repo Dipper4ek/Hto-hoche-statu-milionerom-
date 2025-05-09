@@ -56,11 +56,15 @@ categories = {
 class Game:
     def __init__(self):
         self.subjects = ["math", "physics", "geography", "german"]
+        
     
     def main(self):
-        number_player = input("Enter: ")
+        player_antwort = input("Enter: ")
         self.choose_topic = categories[random.choice(self.subjects)]
-        self.choose_question = self.choose_topic[random.randint(0,1)]
+        self.choose_question = self.choose_topic[random.randint(0,1)]["question"]
+        if player_antwort == "a":
+            player_antwort = self.choose_topic[]
+        
         print(self.choose_question)
         
 p_game = Game()
