@@ -56,24 +56,38 @@ categories = {
 class Game:
     def __init__(self):
         self.subjects = ["math", "physics", "geography", "german"]
+        self. = 
+        self.tr_fl = None
+        self.balance = 0
         
-    
+    def greetings(self):
+        print("Hello")
+        print("This is GAme Hto hoche")
+        print("You have ", balance, "dollars)
+        print("You can win 1 000 000 dollars")
+        print("i give you 10 questions")
+        print("Want you play?")
+        self.tr_fl = str(input("       (Y/n?)"))
     def main(self):
-        player_antwort = input("Enter: ")
         self.choose_topic = categories[random.choice(self.subjects)][random.randint(0,1)]
-        self.choose_question = self.choose_topic["question"]
+        
+        print(self.choose_topic["question"])
+        print(self.choose_topic["answers"])
+        player_antwort = input("Enter: ")
         if player_antwort == "a":
             player_antwort = self.choose_topic["answers"][0]
         elif player_antwort == "b":
             player_antwort = self.choose_topic["answers"][1]
         elif player_antwort == "c":
             player_antwort = self.choose_topic["answers"][2]
-        
+        elif player_antwort == "d":
+            player_antwort = self.choose_topic["answers"][3]
         if player_antwort == self.choose_topic["correct_answer"]:
             print("tu dolbazob")
         
-        print(self.choose_question)
+        
         
 p_game = Game()
+p_game.greetings()
 while True:
     p_game.main()
