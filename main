@@ -60,10 +60,17 @@ class Game:
     
     def main(self):
         player_antwort = input("Enter: ")
-        self.choose_topic = categories[random.choice(self.subjects)]
-        self.choose_question = self.choose_topic[random.randint(0,1)]["question"]
+        self.choose_topic = categories[random.choice(self.subjects)][random.randint(0,1)]
+        self.choose_question = self.choose_topic["question"]
         if player_antwort == "a":
-            player_antwort = self.choose_topic[]
+            player_antwort = self.choose_topic["answers"][0]
+        elif player_antwort == "b":
+            player_antwort = self.choose_topic["answers"][1]
+        elif player_antwort == "c":
+            player_antwort = self.choose_topic["answers"][2]
+        
+        if player_antwort == self.choose_topic["correct_answer"]:
+            print("tu dolbazob")
         
         print(self.choose_question)
         
