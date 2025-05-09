@@ -1,0 +1,68 @@
+import random
+
+
+categories = {
+    "math": [
+        {
+            "question": "Яка сума 2 + 2?",
+            "answers": ["3", "4", "5", "6"],
+            "correct_answer": "4"
+        },
+        {
+            "question": "Що таке корінь з 81?",
+            "answers": ["8", "9", "10", "11"],
+            "correct_answer": "9"
+        }
+    ],
+    "physics": [
+        {
+            "question": "Що є одиницею вимірювання сили?",
+            "answers": ["Кілограм", "Метри", "Ньютон", "Секунда"],
+            "correct_answer": "Ньютон"
+        },
+        {
+            "question": "Яка формула для обчислення сили тяжіння?",
+            "answers": ["F = ma", "F = mg", "F = mv^2", "F = pgh"],
+            "correct_answer": "F = mg"
+        }
+    ],
+    "geography": [
+        {
+            "question": "Яка є столиця Франції?",
+            "answers": ["Лондон", "Париж", "Мадрид", "Рим"],
+            "correct_answer": "Париж"
+        },
+        {
+            "question": "Яка найвища гора в світі?",
+            "answers": ["Ельбрус", "Кіліманджаро", "Говерла", "Еверест"],
+            "correct_answer": "Еверест"
+        }
+    ],
+    "german": [
+        {
+            "question": "Як по-німецьки 'доброго ранку'?",
+            "answers": ["Guten Morgen", "Guten Tag", "Gute Nacht", "Hallo"],
+            "correct_answer": "Guten Morgen"
+        },
+        {
+            "question": "Як по-німецьки 'собака'?",
+            "answers": ["Hund", "Katze", "Vogel", "Pferd"],
+            "correct_answer": "Hund"
+        }
+    ]
+}
+
+
+class Game:
+    def __init__(self):
+        self.subjects = ["math", "physics", "geography", "german"]
+    
+    def main(self):
+        number_player = input("Enter: ")
+        self.choose_number = categories[random.choice(self.subjects)]
+        print(self.choose_number)
+        
+p_game = Game()
+while True:
+    p_game.main()
+
