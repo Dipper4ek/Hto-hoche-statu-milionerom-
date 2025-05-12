@@ -82,7 +82,8 @@ class Game:
             
     def ask_question(self):
             while True:
-                
+                self.choose_topic = input("Choose subject: ")
+                print("1.", )
             self.choose_topic = categories[random.choice(self.subjects)][random.randint(0, 1)]
         
             print(self.choose_topic["question"])
