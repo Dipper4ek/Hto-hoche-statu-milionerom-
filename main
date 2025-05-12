@@ -58,7 +58,7 @@ class Game:
         self.subjects = ["math", "physics", "geography", "german"]
         self.tr_fl = None
         self.balance = 0
-        self.leer_list = []
+        self.running = True
         
     def greetings(self):
         print("Привіт")
@@ -75,14 +75,18 @@ class Game:
             elif self.tr_fl.lower() == "n":
                 self.tr_fl = False
                 break
+        
             
         
         
             
-    def ask_question(self)self.choose_topic = categories[random.choice(self.subjects)][random.randint,)]
+    def ask_question(self):
+            while True:
+                
+            self.choose_topic = categories[random.choice(self.subjects)][random.randint(0, 1)]
         
             print(self.choose_topic["question"])
-            print(self.choose_topic["answers"])
+            print("a)", self.choose_topic["answers"][0], "b)", self.choose_topic["answers"][1], "c)", self.choose_topic["answers"][2], "d)", self.choose_topic["answers"][3], )
             player_antwort = input("Enter: ")
             if player_antwort == "a":
                 player_antwort = self.choose_topic["answers"][0]
@@ -93,15 +97,15 @@ class Game:
             elif player_antwort == "d":
                 player_antwort = self.choose_topic["answers"][3]
             if player_antwort == self.choose_topic["correct_answer"]:
-                return "tu dolbazob"
-        else:
-            print("VSEGO HOROSCHEHO")
-            return
+                print("tu umnichka") 
+            if player_antwort != self.choose_topic["correct_answer"]:
+                print("tu dolbazob")
+
     
     def main(self):
         if self.tr_fl:
             print("\nРозпочинаємо гру!\n")
-            while categories != self.leer_list:
+            while self.running:
                 self.ask_question()
             print(f"\nГра завершена! Ти правильно відповів на {self.question_count} запитань.")
             print(f"Твій підсумковий рахунок: {self.balance} доларів")
@@ -110,8 +114,6 @@ class Game:
             
             
 
-        
-        
         
 p_game = Game()
 p_game.greetings()
